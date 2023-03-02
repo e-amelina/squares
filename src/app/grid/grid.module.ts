@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { GridTemplateComponent } from './grid-template.component';
+import { GridComponent } from './grid.component';
 
 @NgModule({
-  declarations: [GridTemplateComponent],
+  declarations: [GridComponent],
   imports: [CommonModule, MatGridListModule],
-  exports: [GridTemplateComponent],
+  exports: [GridComponent],
 })
 export class GridModule {}

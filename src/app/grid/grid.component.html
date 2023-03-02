@@ -3,16 +3,14 @@
     <div
       class="row"
       *ngFor="let row of cells; let i = index"
-      [style.height.px]="calculateHeight()"
-    >
+      [style.height.px]="calculateHeight()">
       <div
         #cell
         class="cell"
         [attr.row]="i"
         [attr.col]="x"
         *ngFor="let cell of cells; let x = index"
-        [style.width.%]="100 / size"
-      ></div>
+        [style.width.%]="100 / size"></div>
     </div>
   </div>
 </div>

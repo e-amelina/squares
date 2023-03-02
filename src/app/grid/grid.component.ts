@@ -10,11 +10,11 @@ import { fromEvent, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-grid-template',
-  templateUrl: './grid-template.component.html',
-  styleUrls: ['./grid-template.component.scss'],
+  selector: 'app-grid',
+  templateUrl: './grid.component.html',
+  styleUrls: ['./grid.component.scss'],
 })
-export class GridTemplateComponent {
+export class GridComponent {
   @ViewChildren('cell') squares: ElementRef[];
   @ViewChild('informList') informList: ElementRef;
   @ViewChild('gridEl', { static: false }) grid: ElementRef;
