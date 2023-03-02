@@ -48,13 +48,6 @@ export class GridTemplateComponent {
     const informBlock = document.createElement('div');
     informBlock.classList.add('inform-block');
     informBlock.textContent = `row ${row} col ${col}`;
-    informBlock.style.backgroundColor = 'beige';
-    informBlock.style.color = 'peru';
-    informBlock.style.border = '1px solid burlywood';
-    informBlock.style.borderRadius = '5px';
-    informBlock.style.padding = '5px';
-    informBlock.style.marginBottom = '10px';
-    informBlock.style.fontSize = '12px';
     this.informList?.nativeElement.insertBefore(
       informBlock,
       this.informList.nativeElement.children[1]
