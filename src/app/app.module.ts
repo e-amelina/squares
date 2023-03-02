@@ -9,21 +9,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { GridModule } from './grid/grid.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-  ],
+  declarations: [AppComponent, MenuComponent],
   imports: [
     BrowserModule,
     NoopAnimationsModule,
     MatSelectModule,
     ReactiveFormsModule,
     HttpClientModule,
-    GridModule
+    GridModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

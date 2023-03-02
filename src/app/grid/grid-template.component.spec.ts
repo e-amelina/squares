@@ -8,9 +8,8 @@ describe('GridTemplateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GridTemplateComponent ]
-    })
-    .compileComponents();
+      declarations: [GridTemplateComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
