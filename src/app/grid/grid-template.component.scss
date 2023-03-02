@@ -1,0 +1,43 @@
+:host {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 20px;
+}
+
+.cell {
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.row {
+  display: flex;
+}
+
+:host {
+  width: 100%;
+  max-height: 100%;
+  height: calc(100% - 100px);
+}
+
+.hovered {
+  background-color: cornflowerblue;
+}
+
+.inform-list {
+  overflow-y: hidden;
+  max-height: calc(100% - 100px);
+
+  & .title {
+    margin: 0 0 10px;
+    font-weight: bold;
+  }
+}
+
+.inform-block {
+  background-color: beige;
+  color: peru;
+  border: 1px solid lightsalmon;
+  border-radius: 5px;
+  padding: 7px;
+  margin-bottom: 10px;
+}

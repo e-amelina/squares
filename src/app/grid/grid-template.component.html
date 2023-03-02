@@ -1,0 +1,10 @@
+<div #gridEl>
+    <div  *ngIf="!shouldBeDestroyed">
+    <div class="row" *ngFor="let row of cells; let i = index" [style.height.px]="calculateHeight()">
+        <div #cell class="cell" [attr.row]="i" [attr.col]="x" *ngFor="let cell of cells; let x = index" [style.width.%]="100 / size"></div>
+    </div>
+    </div>
+</div>
+<div #informList class="inform-list" *ngIf="!shouldBeDestroyed">
+    <p class="title">Hover squares</p>
+</div>
