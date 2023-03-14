@@ -1,13 +1,16 @@
 import {
   ChangeDetectorRef,
   Component,
+  ComponentFactoryResolver,
   ElementRef,
   Input,
   ViewChild,
   ViewChildren,
+  ViewContainerRef,
 } from '@angular/core';
 import { fromEvent, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { InformBlockComponent } from './inform-block/inform-block.component';
 
 @Component({
   selector: 'app-grid',
@@ -16,10 +19,14 @@ import { switchMap } from 'rxjs/operators';
 })
 export class GridComponent {
   @ViewChildren('cell') squares: ElementRef[];
-  @ViewChild('informList') informList: ElementRef;
+  @ViewChild('inform', { read: ViewContainerRef })
+  informList: ViewContainerRef;
   @ViewChild('gridEl', { static: false }) grid: ElementRef;
 
-  constructor(private ref: ChangeDetectorRef) {}
+  constructor(
+    private ref: ChangeDetectorRef,
+    private readonly componentFactoryResolver: ComponentFactoryResolver
+  ) {}
 
   @Input() set size(val: number) {
     if (this.squares?.length) {
@@ -45,13 +52,12 @@ export class GridComponent {
   private _size: number;
 
   addInformRow(row: number, col: number): void {
-    const informBlock = document.createElement('div');
-    informBlock.classList.add('inform-block');
-    informBlock.textContent = `row ${row} col ${col}`;
-    this.informList?.nativeElement.insertBefore(
-      informBlock,
-      this.informList.nativeElement.children[1]
-    );
+    const comp =
+      this.componentFactoryResolver.resolveComponentFactory(
+        InformBlockComponent
+      );
+    const compRef = this.informList.createComponent(comp, 0);
+    compRef.instance.data = { row: row, col: col };
   }
 
   setHoverSubscription(): void {

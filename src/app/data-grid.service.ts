@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Modes } from './menu/menu.component';
 
 @Injectable({
@@ -10,8 +10,8 @@ export class DataGridService {
   constructor(private _http: HttpClient) {}
 
   getGridData(): Observable<Modes[]> {
-    return this._http.get('http://demo7919674.mockable.io/') as Observable<
-      Modes[]
-    >;
+    // return this._http.get('http://demo7919674.mockable.io/')
+
+    return of([{ name: 'a', field: 5 }]) as Observable<Modes[]>;
   }
 }
