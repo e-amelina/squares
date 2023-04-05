@@ -12,6 +12,6 @@ export class DataGridService {
   getGridData(): Observable<Modes[]> {
     // return this._http.get('http://demo7919674.mockable.io/')
 
-    return of([{ name: 'a', field: 5 }]) as Observable<Modes[]>;
+    return of([{ name: 'easy', field: 5 }, { name: 'normal', field: 10 }, { name: 'hard', field: 25 }]) as Observable<Modes[]>;
   }
 }
